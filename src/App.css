@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    height: 100dvh;
+    padding: 20px 10%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-title {
+    height: max-content;
+    font-size: 3rem;
+    color: #fefefe;
+    letter-spacing: 5px;
+    border-bottom: 1px solid #fefefe;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.list-wrapper.list-wrapper_alphabet {
+    flex-flow: row wrap;
+    height: max-content;
+    gap: 10px;
+    overflow: visible;
 }
 
-.App-link {
-  color: #61dafb;
+.list-wrapper::-webkit-scrollbar {
+    width: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-wrapper::-webkit-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 10px;
+}
+
+.list-wrapper::-webkit-scrollbar-track {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+.list-wrapper li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: max-content;
+}
+
+.list-wrapper.list-wrapper_alphabet li {
+    background-color: #fefefe50;
+    border-radius: 4px;
+    width: 3rem;
+    height: 3rem;
+}
+
+.list-wrapper li a {
+    color: #fefefe;
+    font-size: 1.5rem;
+    transition: .2s;
+}
+
+.list-wrapper li a:hover {
+    color: pink;
+}
+
+.list-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: rgba(255, 255, 255, 0.28);
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.list-btn:last-of-type {
+    margin-right: 10px;
+}
+
+.list-btn img {
+    width: 75%;
+}
+
+.list-btn.list-btn_add {
+    padding: 2px;
+}
+
+.list-btn.list-btn_add img {
+    width: 100%;
+}
+
+.word-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word-center p {
+    font-size: 5rem;
+    text-shadow: 0 40px 2px pink,
+        0 80px 5px pink,
+        0 120px 10px pink,
+        0 160px 18px pink,
+        0 -40px 2px pink,
+        0 -80px 5px pink,
+        0 -120px 10px pink,
+        0 -160px 18px pink;
+    color: #fefefe;
+    position: relative;
+}
+
+.word-center p::before,
+.word-center p::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    min-width: 380px;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.word-center p::before {
+    top: 25%;
+    left: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.word-center p::after {
+    top: 75%;
+    left: 60%;
+    background-color: rgba(255, 192, 203, 0.5);
+}
+
+.separator {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    padding-block: 3px;
+    color: #fefefe;
+    border-top: 1px dashed #fefefe;
+    border-bottom: 1px dashed #fefefe;
+}
+
+.None {
+    width: max-content;
+    border-radius: 4px;
+    color: #fefefe;
+    font-size: 2rem;
+    padding: 8px 20px;
+    background-color: #444;
 }
